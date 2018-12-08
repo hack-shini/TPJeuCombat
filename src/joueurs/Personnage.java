@@ -42,11 +42,6 @@ public abstract class Personnage {
 
     public abstract void combattreDeFaconSpeciale(Personnage joueur) ;
 
-    public void subirAttaque(int dommages) {
-        this.vie -= dommages;
-        System.out.println(nom + " perd " + dommages + " points de vie");
-    }
-
     public String getNom() {
         return nom;
     }
@@ -71,11 +66,15 @@ public abstract class Personnage {
         return vie;
     }
 
-    public void perdVitalite(int dommage) {
+    public boolean perdVitalite(int dommage) {
+        boolean vivant = true;
+        System.out.println(nom + " perd " + dommage + " points de vie");
         this.vie -= dommage;
         if (vie <= 0) {
+            vivant = false;
             System.out.println(nom + "est mort");
         }
+        return vivant;
     }
 
     public int gagneVitalite(int gain) {
