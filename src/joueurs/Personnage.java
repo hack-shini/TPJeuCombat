@@ -72,7 +72,7 @@ public abstract class Personnage {
         this.vie -= dommage;
         if (vie <= 0) {
             vivant = false;
-            System.out.println(nom + "est mort");
+            System.out.println(nom + " est mort");
         }
         return vivant;
     }
@@ -80,7 +80,7 @@ public abstract class Personnage {
     public int gagneVitalite(int gain) {
         int gainReel;
         if (this.vie + gain > vieAuDepart) {
-            System.out.println(nom + "a retrouvé sa vitalité initiale, il ne peut pas la dépasser");
+            System.out.println(nom + " a retrouvé sa vitalité initiale, il ne peut pas la dépasser");
             gainReel = vieAuDepart - this.vie;
             this.vie = vieAuDepart;
         } else {
