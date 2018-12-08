@@ -10,27 +10,29 @@ class PersonnageTest {
     void Given_Dommages20Vitalite500_When_perdVitalite_Then_Vitalite480AndReturnTrue() {
         Personnage personnage = new Guerrier ("Joueur 1", 100, 100, 0, 0 );
         assertEquals(personnage.perdVitalite(20),true);
-        assertEquals(personnage.getVie(),480);
+        assertEquals(personnage.getVitalite(),480);
     }
 
     @Test
     void Given_Dommages40Vitalite40_When_perdVitalite_Then_JoueurMortAndReturnFalse() {
         Personnage personnage = new Guerrier ("Joueur 1", 8, 8, 0, 0 );
         assertEquals(personnage.perdVitalite(40),false);
-        assertEquals(personnage.getVie(),0);
+        assertEquals(personnage.getVitalite(),0);
     }
 
     @Test
-    void Given_Gain10Vitalite50_When_gagneVitalite_Then_Vitalite60AndReturn10() {
+    void Given_VitaliteInitiale50Perte20Gain10_When_gagneVitalite_Then_Vitalite40AndReturn10() {
         Personnage personnage = new Guerrier ("Joueur 1", 10, 10, 0, 0 );
+        personnage.perdVitalite(20);
         assertEquals(personnage.gagneVitalite(10),10);
-        assertEquals(personnage.getVie(),60);
+        assertEquals(personnage.getVitalite(),40);
     }
 
     @Test
-    void Given_Gain10Vitalite95_When_gagneVitalite_Then_Vitalite100AndReturn5() {
+    void Given_VitaliteInitiale50Perte10Gain20_When_gagneVitalite_Then_Vitalite50AndReturn10() {
         Personnage personnage = new Guerrier ("Joueur 1", 10, 10, 0, 0 );
-        assertEquals(personnage.gagneVitalite(10),5);
-        assertEquals(personnage.getVie(),100);
+        personnage.perdVitalite(10);
+        assertEquals(personnage.gagneVitalite(20),10);
+        assertEquals(personnage.getVitalite(),50);
     }
 }

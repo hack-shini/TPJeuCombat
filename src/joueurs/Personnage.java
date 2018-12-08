@@ -62,7 +62,7 @@ public abstract class Personnage {
         return intelligence;
     }
 
-    public int getVie() {
+    public int getVitalite() {
         return vie;
     }
 

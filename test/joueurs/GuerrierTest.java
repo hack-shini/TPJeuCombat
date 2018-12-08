@@ -10,7 +10,7 @@ public class GuerrierTest {
         Guerrier guerrier = new Guerrier("Joueur 1", 10, 10, 0, 0);
         Personnage autreJoueur = new Guerrier("Joueur 2", 10, 10, 0, 0);
         guerrier.attaquer(autreJoueur);
-        assertEquals(autreJoueur.getVie(),40);
+        assertEquals(autreJoueur.getVitalite(),40);
     }
 
     @Test
@@ -18,7 +18,7 @@ public class GuerrierTest {
         Guerrier guerrier = new Guerrier("Joueur 1", 10, 10, 0, 0);
         Personnage autreJoueur = new Guerrier("Joueur 2", 10, 10, 0, 0);
         guerrier.combattreDeFaconSpeciale(autreJoueur);
-        assertEquals(autreJoueur.getVie(),30);
+        assertEquals(autreJoueur.getVitalite(),30);
     }
 
     @Test
@@ -26,6 +26,6 @@ public class GuerrierTest {
         Guerrier guerrier = new Guerrier("Joueur 1", 10, 10, 0, 0);
         Personnage autreJoueur = new Guerrier("Joueur 2", 10, 10, 0, 0);
         guerrier.combattreDeFaconSpeciale(autreJoueur);
-        assertEquals(guerrier.getVie(),45);
+        assertEquals(guerrier.getVitalite(),45);
     }
 }
