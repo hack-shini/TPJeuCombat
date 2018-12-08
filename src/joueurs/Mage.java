@@ -20,7 +20,7 @@ public class Mage extends Personnage{
 
     @Override
     public void attaquer(Personnage autreJoueur) {
-
+        this.attaqueBasique.utiliserArmeDeBase(nom, intelligence, autreJoueur);
     }
 
     @Override
