@@ -71,15 +71,6 @@ public abstract class Personnage {
         return vie;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
-        this.vie = niveau * 5;
-    }
-
     public void perdVitalite(int dommage) {
         this.vie -= dommage;
         if (vie <= 0) {
