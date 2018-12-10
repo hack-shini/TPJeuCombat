@@ -17,7 +17,7 @@ public class Jeu {
         joueur2 = creerPersonnage(2);
     }
 
-    public Personnage creerPersonnage(int numJoueur) {
+    private Personnage creerPersonnage(int numJoueur) {
 
         int niveau, force, agilite, intelligence;
         Personnage personnage;
