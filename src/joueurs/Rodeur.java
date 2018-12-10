@@ -17,13 +17,4 @@ public class Rodeur extends Personnage {
         super(nom, niveau, force, agilite, intelligence, new TirAlArc(), new Concentration());
     }
 
-    @Override
-    public void attaquer(Personnage autreJoueur) {
-        this.attaqueBasique.utiliserArmeDeBase(nom, agilite, autreJoueur);
-    }
-
-    @Override
-    public void combattreDeFaconSpeciale(Personnage joueur) {
-        this.attaqueSpeciale.utiliserArmeSpeciale(nom, niveau/2, this);
-    }
 }

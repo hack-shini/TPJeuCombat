@@ -3,9 +3,9 @@ package sorts;
 import joueurs.Personnage;
 
 public class Concentration implements AttaqueSpeciale {
-    public void utiliserArmeSpeciale(String nomJoueur, int gain, Personnage joueur) {
-        joueur.gagneAgilite(gain);
+    public void utiliserArmeSpeciale(Personnage joueur, Personnage adversaire) {
 
-        System.out.println(nomJoueur + " utilise Concentration et gagne " + gain + " en agilité");
+        joueur.gagneAgilite(joueur.getNiveau()/2);
+        System.out.println(joueur.getNom() + " utilise Concentration et gagne " + joueur.getNiveau()/2 + " en agilité");
     }
 }

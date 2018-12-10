@@ -38,9 +38,13 @@ public abstract class Personnage {
         this.attaqueSpeciale = attaqueSpeciale;
     }
 
-    public abstract void attaquer(Personnage autreJoueur) ;
+    public void attaquer(Personnage autreJoueur) {
+        attaqueBasique.utiliserArmeDeBase(this, autreJoueur);
+    };
 
-    public abstract void combattreDeFaconSpeciale(Personnage joueur) ;
+    public void combattreDeFaconSpeciale(Personnage adversaire) {
+        this.attaqueSpeciale.utiliserArmeSpeciale(this, adversaire);
+    };
 
     public String getNom() {
         return nom;

@@ -17,15 +17,4 @@ public class Mage extends Personnage{
         super(nom, niveau, force, agilite, intelligence, new BouleDeFeu(), new Soin());
     }
 
-
-    @Override
-    public void attaquer(Personnage autreJoueur) {
-        this.attaqueBasique.utiliserArmeDeBase(nom, intelligence, autreJoueur);
-    }
-
-    @Override
-    public void combattreDeFaconSpeciale(Personnage joueur) {
-
-        this.attaqueSpeciale.utiliserArmeSpeciale(nom, intelligence*2, this);
-    }
 }

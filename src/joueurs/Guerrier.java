@@ -19,17 +19,4 @@ public class Guerrier extends Personnage {
 
     }
 
-    @Override
-    public void attaquer(Personnage autreJoueur) {
-        attaqueBasique.utiliserArmeDeBase(nom, force, autreJoueur);
-
-    }
-
-    @Override
-    public void combattreDeFaconSpeciale(Personnage autreJoueur) {
-        attaqueSpeciale.utiliserArmeSpeciale(nom,force*2, autreJoueur);
-        this.perdVitalite(force / 2);
-        System.out.println(nom + " perd " + (force/2) + " points de vie");
-    }
-
 }
