@@ -1,10 +1,14 @@
 package joueurs;
 
-import sorts.AttaqueBasique;
-import sorts.AttaqueSpeciale;
 import sorts.BouleDeFeu;
 import sorts.Soin;
 
+/**
+ * Classe Mage
+ * Elle spécialise la classe abstraite Personnage
+ * en définissant l'interface attaqueBasique avec BouleDeFeu
+ * et l'interface attaqueSpeciale avec Soin
+ */
 public class Mage extends Personnage{
 
     public Mage() {

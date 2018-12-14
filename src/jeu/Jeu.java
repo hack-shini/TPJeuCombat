@@ -7,6 +7,17 @@ import joueurs.Rodeur;
 
 import java.util.Scanner;
 
+/**
+ * Classe Jeu.
+ * Elle permet d'instancier un jeu de combat épique (constructeur) et de le lancer (méthode jouer).
+ * Deux attributs :
+ * Personnage joueur1;   le premier joueur
+ * Personnage joueur2;   le deuxième joueur
+ *
+ * Son constructeur s'appuie sur la méthode creerPersonnage qui interroge l'utilisateur pour récupérer les caractéristiques d'un personnage puis crée une instance de Personnage avec trois choix possibles :
+ * Guerrier, Rodeur ou Mage qui sont définis dans leur classe respective.
+ */
+
 public class Jeu {
 
     private Personnage joueur1;
@@ -62,6 +73,18 @@ public class Jeu {
 
     }
 
+    /**
+     * Méthode jouer().
+     * Elle permet de lancer le jeu une fois les personnages instanciés.
+     *
+     * La main est donnée au premier joueur pour qu'il choisisse son action (par la méthode demanderAction, il peut choisir entre Attaque Basique ou Attaque Spéciale);
+     * les calculs des impacts positifs ou négatifs sont faits pour lui et son adversaire,
+     * ceci par le biais des méthodes attaquer et combattreDeFaconSpeciale qui sont définies dans la classe Personnage.
+     *
+     * Puis c'est le tour du deuxième joueur de devenir attaquant et de choisir son action avec les conséquences qui en découlent.
+     *
+     * Et ainsi de suite jusqu'à ce qu'un des deux joueurs ait perdu (il n'a plus de vitalité).
+     */
     public void jouer() {
         Personnage joueur, adversaire;
         int nbTours = 1, action = 0;
@@ -95,6 +118,17 @@ public class Jeu {
     }
 
     private static Scanner sc = new Scanner(System.in);
+
+    /**
+     * Méthode demander
+     * Cette méthode est générique dans ce sens qu'elle affiche un message indiquant au joueur ce qu'il doit entrer, puis elle contrôle que l'entrée est bien un entier compris dans les bornes valMin, valMax.
+     * En cas de saisie incorrecte, gérée par interruption ou par contrôle de valeur, un message d'erreur est affiché
+     * et on boucle ainsi jusqu'à ce que l'entrée soit correcte..
+     * @param message le message à afficher
+     * @param valMin  la valeur minimale (un nombre entier) acceptée en entrée
+     * @param valMax  la valeur maximale (un nombre entier) acceptée en entrée
+     * @return la valeur entrée.
+     */
 
     public int demander(String message, int valMin, int valMax) {
         int reponse = -1;

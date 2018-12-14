@@ -3,9 +3,14 @@ package joueurs;
 import sorts.CoupDeRage;
 import sorts.CoupdEpee;
 
+/**
+ * Classe Guerrier
+ * Elle spécialise la classe abstraite Personnage
+ * en définissant l'interface attaqueBasique avec CoupdEpee
+ * et l'interface attaqueSpeciale avec CoupDeRage
+ * CoupdEpee et CoupDeRage sont définies dans un package séparé : le package sort.
+ */
 public class Guerrier extends Personnage {
-
-    // CoupdEpee coupdEpee = new CoupdEpee();
 
 
     public Guerrier() {
